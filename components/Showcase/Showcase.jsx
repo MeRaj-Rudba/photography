@@ -93,7 +93,7 @@ export default function Showcase(props) {
 
   return (
     <div>
-      <div className="container mx-auto space-y-2 lg:space-y-0 lg:gap-2 lg:grid lg:grid-cols-3">
+      <div className="container mx-auto space-y-2 lg:space-y-0 lg:gap-4 lg:grid lg:grid-cols-3">
         {DUMMY_DATA.map((data, idx) => (
           <ImageCard key={idx} image={data} />
         ))}

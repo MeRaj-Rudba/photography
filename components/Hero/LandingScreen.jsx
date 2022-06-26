@@ -24,7 +24,7 @@ export default function LandingScreen() {
       </div>
       <div className="order-first  pt-6 md:p-8 text-center md:text-left space-y-4 self-center">
         <blockquote>
-          <p className="text-5xl font-medium my-font text-transparent bg-clip-text bg-gradient-to-r from-pink-700 to-orange-400 ">
+          <p className="text-2xl lg:text-5xl font-medium my-font text-transparent bg-clip-text bg-gradient-to-r from-pink-700 to-orange-400 ">
             “It is an illusion that photos are made with the camera… they are
             made with the eye, heart, and head.”
           </p>

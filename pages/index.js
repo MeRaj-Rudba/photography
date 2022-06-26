@@ -8,6 +8,7 @@ import Layout from "../sections/Layout";
 import styles from "../styles/Home.module.css";
 import lottieImage from "../components/images/lottie-2.gif";
 import Showcase from "../components/Showcase/Showcase";
+import UserInfo from "../components/user/UserInfo";
 // import Showcase from "../components/Showcase/Showcase";
 
 export default function Home() {

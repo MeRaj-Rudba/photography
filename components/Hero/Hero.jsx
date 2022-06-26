@@ -61,8 +61,7 @@ function Hero() {
                   data-aos="zoom-y-out"
                   data-aos-delay="150"
                 >
-                  Our landing page template works on all devices, so you only
-                  have to set it up once, and get beautiful results forever.
+                  Let's try to see the world with another parspective.
                 </p>
                 <div
                   className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"
