@@ -1,0 +1,86 @@
+export default dummyData = [
+  {
+    title: "Beautiful Image",
+    date: new Date(),
+    image: "../images/dummy/dummy-image (1).jpg",
+    device: "iPhone 13",
+    location: "Dhaka,Bangladesh",
+    photographer: "MeRaj Rudba",
+    likes: 0,
+    categories: ["architecture", "street", "buildings"],
+    description:
+      "This phot is one of the seven dummy images I have gathered to test if it works  or  not. Its a good way to try things out before rolling it to production. I am optimistic that it will work. lets find out",
+  },
+  {
+    title: "Beautiful Image",
+    date: new Date(),
+    image: "../images/dummy/dummy-image (2).jpg",
+    device: "iPhone 13",
+    location: "Dhaka,Bangladesh",
+    photographer: "MeRaj Rudba",
+    likes: 0,
+    categories: ["architecture", "street", "buildings"],
+    description:
+      "This phot is one of the seven dummy images I have gathered to test if it works  or  not. Its a good way to try things out before rolling it to production. I am optimistic that it will work. lets find out",
+  },
+  {
+    title: "Beautiful Image",
+    date: new Date(),
+    image: "../images/dummy/dummy-image (3).jpg",
+    device: "iPhone 13",
+    location: "Dhaka,Bangladesh",
+    photographer: "MeRaj Rudba",
+    likes: 0,
+    categories: ["architecture", "street", "buildings"],
+    description:
+      "This phot is one of the seven dummy images I have gathered to test if it works  or  not. Its a good way to try things out before rolling it to production. I am optimistic that it will work. lets find out",
+  },
+  {
+    title: "Beautiful Image",
+    date: new Date(),
+    image: "../images/dummy/dummy-image (4).jpg",
+    device: "iPhone 13",
+    location: "Dhaka,Bangladesh",
+    photographer: "MeRaj Rudba",
+    likes: 0,
+    categories: ["architecture", "street", "buildings"],
+    description:
+      "This phot is one of the seven dummy images I have gathered to test if it works  or  not. Its a good way to try things out before rolling it to production. I am optimistic that it will work. lets find out",
+  },
+  {
+    title: "Beautiful Image",
+    date: new Date(),
+    image: "../images/dummy/dummy-image (5).jpg",
+    device: "iPhone 13",
+    location: "Dhaka,Bangladesh",
+    photographer: "MeRaj Rudba",
+    likes: 0,
+    categories: ["architecture", "street", "buildings"],
+    description:
+      "This phot is one of the seven dummy images I have gathered to test if it works  or  not. Its a good way to try things out before rolling it to production. I am optimistic that it will work. lets find out",
+  },
+  {
+    title: "Beautiful Image",
+    date: new Date(),
+    image: "../images/dummy/dummy-image (6).jpg",
+    device: "iPhone 13",
+    location: "Dhaka,Bangladesh",
+    photographer: "MeRaj Rudba",
+    likes: 0,
+    categories: ["architecture", "street", "buildings"],
+    description:
+      "This phot is one of the seven dummy images I have gathered to test if it works  or  not. Its a good way to try things out before rolling it to production. I am optimistic that it will work. lets find out",
+  },
+  {
+    title: "Beautiful Image",
+    date: new Date(),
+    image: "../images/dummy/dummy-image (7).jpg",
+    device: "iPhone 13",
+    location: "Dhaka,Bangladesh",
+    photographer: "MeRaj Rudba",
+    likes: 0,
+    categories: ["architecture", "street", "buildings"],
+    description:
+      "This phot is one of the seven dummy images I have gathered to test if it works  or  not. Its a good way to try things out before rolling it to production. I am optimistic that it will work. lets find out",
+  },
+];

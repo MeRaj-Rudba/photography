@@ -2,9 +2,13 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import validator from "validator";
 import SuccessModal from "./Modals/SuccessModal";
+import LoadingModal from "./Modals/LoadingModal";
+import ErrorModal from "./Modals/ErrorModal";
 
 export default function Form() {
   const [showModal, setShowModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorModal, setErrorModal] = useState(false);
   const catRef = useRef(null);
   const [cat, setCat] = useState("");
   const [title, setTitle] = useState("");
@@ -38,12 +42,13 @@ export default function Form() {
     description: "",
   });
 
-  const handleImage = (event) => {
+  const handleImage = async (event) => {
     setImage(event.target.files[0]);
   };
 
-  const handleSubmit = () => {
-    console.log("came here");
+  const handleSubmit = async () => {
+    console.log("Precessing...");
+    setLoading(true);
 
     setErrors({
       title: "",
@@ -109,32 +114,47 @@ export default function Form() {
     }
 
     if (!hasError) {
-      const formData = new FormData();
-      formData.append("image", image, image.name);
-      formData.append("title", title);
-      formData.append("date", date);
-      formData.append("location", location);
-      formData.append("device", device);
-      formData.append("photographer", photographer);
-      formData.append("likes", 0);
-      formData.append("categories", categories);
-      formData.append("description", description);
+      const formDataImage = new FormData();
 
-      const newPhoto = {
-        title: title,
-        date: date,
-        image: image,
-        device: device,
-        location: location,
-        photographer: photographer,
-        likes: 0,
-        categories: categories,
-        description: description,
-      };
-      console.log(newPhoto);
-      console.log(formData.get("categories"));
-      clearForm();
-      setShowModal(true);
+      formDataImage.append("file", image);
+      formDataImage.append("upload_preset", "rudba-photography");
+      // upload image logic here
+
+      const data = await fetch(
+        "https://api.cloudinary.com/v1_1/rudba/image/upload",
+        {
+          method: "POST",
+          body: formDataImage,
+        }
+      )
+        .then((r) =>
+          r.json().then((res) => {
+            console.log(res);
+
+            const newPhoto = {
+              title: title,
+              date: date,
+              image: res,
+              device: device,
+              location: location,
+              photographer: photographer,
+              likes: 0,
+              categories: categories,
+              description: description,
+            };
+            console.log(newPhoto);
+            console.log("Success...");
+            clearForm();
+            setLoading(false);
+            setShowModal(true);
+          })
+        )
+        .catch((err) => {
+          console.log(err);
+          setErrorModal(true);
+          console.log("Error...");
+        });
+      // upload image logic here
     } else {
       return;
     }
@@ -161,6 +181,16 @@ export default function Form() {
         {showModal ? (
           <>
             <SuccessModal setShowModal={setShowModal} />
+          </>
+        ) : null}
+        {loading ? (
+          <>
+            <LoadingModal setShowModal={setLoading} />
+          </>
+        ) : null}
+        {errorModal ? (
+          <>
+            <ErrorModal setShowModal={setErrorModal} />
           </>
         ) : null}
         <div className="mb-4">
