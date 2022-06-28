@@ -5,7 +5,7 @@ export default function UserInfo() {
     <div className="flex items-center">
       <Image
         className="h-11 w-11 rounded-full"
-        src="https://pbs.twimg.com/profile_images/1287562748562309122/4RLk5A_U_x96.jpg"
+        src="https://images.unsplash.com/profile-1656214358019-3746a602805a?dpr=2&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff"
         height={36}
         width={36}
         alt="MeRaj Rudba"
