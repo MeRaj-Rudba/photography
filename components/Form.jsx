@@ -4,7 +4,7 @@ import validator from "validator";
 import SuccessModal from "./Modals/SuccessModal";
 import LoadingModal from "./Modals/LoadingModal";
 import ErrorModal from "./Modals/ErrorModal";
-
+import axios from "axios";
 export default function Form() {
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -120,35 +120,43 @@ export default function Form() {
       formDataImage.append("upload_preset", "rudba-photography");
       // upload image logic here
 
-      const data = await fetch(
-        "https://api.cloudinary.com/v1_1/rudba/image/upload",
-        {
-          method: "POST",
-          body: formDataImage,
-        }
-      )
-        .then((r) =>
-          r.json().then((res) => {
-            console.log(res);
-
-            const newPhoto = {
-              title: title,
-              date: date,
-              image: res,
-              device: device,
-              location: location,
-              photographer: photographer,
-              likes: 0,
-              categories: categories,
-              description: description,
-            };
-            console.log(newPhoto);
-            console.log("Success...");
-            clearForm();
-            setLoading(false);
-            setShowModal(true);
-          })
+      axios
+        .post(
+          "https://api.cloudinary.com/v1_1/rudba/image/upload",
+          formDataImage
         )
+        // .then((r) => r.json())
+        .then((res) => {
+          console.log(JSON.stringify(res.data));
+
+          const newPhoto = {
+            title: title,
+            date: date,
+            image: res.data,
+            device: device,
+            location: location,
+            photographer: photographer,
+            likes: 0,
+            categories: categories,
+            description: description,
+          };
+
+          axios
+            .post("http://127.0.0.1:8000/api/photographs", newPhoto)
+            // .then((response) => response.json())
+            .then((data) => {
+              console.log(data);
+              console.log("Success:", data);
+
+              clearForm();
+              setLoading(false);
+              setShowModal(true);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        })
+
         .catch((err) => {
           console.log(err);
           setErrorModal(true);

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import AnimationDemo from "../components/Hero/AnimationDemo";
+import axios from "axios";
 import Hero from "../components/Hero/Hero";
 import LandingScreen from "../components/Hero/landingScreen";
 import ScrollLinked from "../components/Hero/ScrollLinked";
@@ -11,7 +12,7 @@ import Showcase from "../components/Showcase/Showcase";
 import UserInfo from "../components/user/UserInfo";
 // import Showcase from "../components/Showcase/Showcase";
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
@@ -35,8 +36,27 @@ export default function Home() {
             objectFit="contain"
           />
         </div>
-        <Showcase />
+        <Showcase photographs={props.photographs} />
       </Layout>
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  try {
+    const res = await axios.get("http://127.0.0.1:8000/api/photographs");
+
+    return {
+      props: {
+        photographs: res.photographs.map((photo) => photo),
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
+  return {
+    props: {
+      data: null,
+    },
+  };
+};
