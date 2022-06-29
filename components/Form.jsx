@@ -142,7 +142,7 @@ export default function Form() {
           };
 
           axios
-            .post("http://127.0.0.1:8000/api/photographs", newPhoto)
+            .post("http://localhost:8080/create", newPhoto)
             // .then((response) => response.json())
             .then((data) => {
               console.log(data);

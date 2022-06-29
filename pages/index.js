@@ -44,11 +44,11 @@ export default function Home(props) {
 
 export const getServerSideProps = async () => {
   try {
-    const res = await axios.get("http://127.0.0.1:8000/api/photographs");
+    const res = await axios.get("http://localhost:8080/get-all");
 
     return {
       props: {
-        photographs: res.photographs.map((photo) => photo),
+        photographs: res.map((photo) => photo),
       },
     };
   } catch (error) {
