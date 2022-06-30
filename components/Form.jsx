@@ -37,7 +37,6 @@ export default function Form() {
     image: "",
     location: "",
     photographer: "",
-    likes: "",
     categories: "",
     description: "",
   });
@@ -57,7 +56,7 @@ export default function Form() {
       image: "",
       location: "",
       photographer: "",
-      likes: "",
+
       categories: "",
       description: "",
     });
@@ -136,7 +135,6 @@ export default function Form() {
             device: device,
             location: location,
             photographer: photographer,
-            likes: 0,
             categories: categories,
             description: description,
           };

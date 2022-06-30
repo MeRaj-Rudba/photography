@@ -13,7 +13,6 @@ import UserInfo from "../components/user/UserInfo";
 // import Showcase from "../components/Showcase/Showcase";
 
 export default function Home(props) {
-  console.log(props);
   return (
     <div className={styles.container}>
       <Head>
