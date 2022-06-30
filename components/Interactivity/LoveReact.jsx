@@ -32,7 +32,7 @@ export default function LoveReact(props) {
         <span>
           <svg
             role="status"
-            className="h-6 w-6 animate-spin mr-2 text-rose-600  fill-zinc-50 dark:fill-zinc-800 "
+            className="h-6 w-6 animate-spin mr-2 text-zinc-50 dark:text-zinc-900  fill-rose-600  "
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
