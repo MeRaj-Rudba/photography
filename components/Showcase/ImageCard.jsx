@@ -8,13 +8,13 @@ import { fill } from "@cloudinary/url-gen/actions/resize";
 import UserInfo from "../user/UserInfo";
 
 export default function ImageCard(props) {
-  const link = `/gallery/${props.id}`;
+  const link = `/gallery/${props.info._id}`;
   const cld = new Cloudinary({
     cloud: {
       cloudName: "rudba",
     },
   });
-  const myImage = cld.image(props.image.public_id);
+  const myImage = cld.image(props.info.image.public_id);
   myImage.resize(fill().width(250).height(250));
   return (
     <Link href={link}>

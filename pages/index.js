@@ -13,6 +13,7 @@ import UserInfo from "../components/user/UserInfo";
 // import Showcase from "../components/Showcase/Showcase";
 
 export default function Home(props) {
+  console.log(props);
   return (
     <div className={styles.container}>
       <Head>
@@ -36,6 +37,10 @@ export default function Home(props) {
             objectFit="contain"
           />
         </div>
+        <div className="text-center my-5 text-2xl font-bold mx-auto ">
+          <p>Featured</p>
+        </div>
+
         <Showcase photographs={props.photographs} />
       </Layout>
     </div>
@@ -48,7 +53,7 @@ export const getServerSideProps = async () => {
 
     return {
       props: {
-        photographs: res.map((photo) => photo),
+        photographs: res.data,
       },
     };
   } catch (error) {
