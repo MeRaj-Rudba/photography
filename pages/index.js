@@ -52,7 +52,7 @@ export const getServerSideProps = async () => {
 
     return {
       props: {
-        photographs: res.data,
+        photographs: res.data.filter((photo) => photo.isFeatured),
       },
     };
   } catch (error) {
