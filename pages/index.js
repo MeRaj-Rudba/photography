@@ -1,16 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
-import AnimationDemo from "../components/Hero/AnimationDemo";
+
 import axios from "axios";
 import Hero from "../components/Hero/Hero";
 import LandingScreen from "../components/Hero/landingScreen";
-import ScrollLinked from "../components/Hero/ScrollLinked";
+import environment from "../environment.js";
 import Layout from "../sections/Layout";
 import styles from "../styles/Home.module.css";
 import lottieImage from "../components/images/lottie-2.gif";
 import Showcase from "../components/Showcase/Showcase";
-import UserInfo from "../components/user/UserInfo";
-// import Showcase from "../components/Showcase/Showcase";
 
 export default function Home(props) {
   return (
@@ -47,8 +45,9 @@ export default function Home(props) {
 }
 
 export const getServerSideProps = async () => {
+  const host = environment.api_url;
   try {
-    const res = await axios.get("http://localhost:8080/get-all");
+    const res = await axios.get(`${host}/get-all`);
 
     return {
       props: {

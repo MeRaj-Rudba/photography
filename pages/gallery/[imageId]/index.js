@@ -3,6 +3,7 @@ import Image from "next/image";
 import Layout from "../../../sections/Layout";
 import axios from "axios";
 import ImageDetails from "../../../components/Showcase/ImageDetails";
+import environment from "../../../environment";
 
 const ImageDetailsPage = ({ photograph }) => {
   return (
@@ -22,9 +23,9 @@ const ImageDetailsPage = ({ photograph }) => {
 export default ImageDetailsPage;
 
 export const getStaticProps = async ({ params }) => {
-  const { data } = await axios.get(
-    `http://localhost:8080/photograph/${params.imageId}`
-  );
+  const host = environment.api_url;
+
+  const { data } = await axios.get(`${host}/photograph/${params.imageId}`);
   const photograph = data;
   return {
     props: {
@@ -34,7 +35,8 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const { data } = await axios.get("http://localhost:8080/get-all");
+  const host = environment.api_url;
+  const { data } = await axios.get(`${host}/get-all`);
   const photographs = data;
   const paths = photographs.map((photo) => ({
     params: { imageId: photo._id.toString() },

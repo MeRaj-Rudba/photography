@@ -5,7 +5,10 @@ import SuccessModal from "./Modals/SuccessModal";
 import LoadingModal from "./Modals/LoadingModal";
 import ErrorModal from "./Modals/ErrorModal";
 import axios from "axios";
+import environment from "../environment";
 export default function Form() {
+  const host = environment.api_url;
+  const cloudinary_url = environment.cloudinary_url;
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorModal, setErrorModal] = useState(false);
@@ -120,10 +123,7 @@ export default function Form() {
       // upload image logic here
 
       axios
-        .post(
-          "https://api.cloudinary.com/v1_1/rudba/image/upload",
-          formDataImage
-        )
+        .post(cloudinary_url, formDataImage)
         // .then((r) => r.json())
         .then((res) => {
           console.log(JSON.stringify(res.data));
@@ -140,7 +140,7 @@ export default function Form() {
           };
 
           axios
-            .post("http://localhost:8080/create", newPhoto)
+            .post(`${host}/create`, newPhoto)
             // .then((response) => response.json())
             .then((data) => {
               console.log(data);

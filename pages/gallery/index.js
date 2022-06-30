@@ -6,6 +6,7 @@ import styles from "../../styles/Home.module.css";
 import lottieImage from "../../components/images/lottie-6.gif";
 import Showcase from "../../components/Showcase/Showcase";
 import Layout from "../../sections/Layout";
+import environment from "../../environment";
 
 // import Showcase from "../components/Showcase/Showcase";
 
@@ -39,8 +40,9 @@ export default function Home(props) {
 }
 
 export const getServerSideProps = async () => {
+  const host = environment.api_url;
   try {
-    const res = await axios.get("http://localhost:8080/get-all");
+    const res = await axios.get(`${host}/get-all`);
 
     return {
       props: {

@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import lottieImage from "../images/lottie-loader.gif";
 import Image from "next/image";
+import environment from "../../environment";
 
 export default function LoveReact(props) {
+  const host = environment.api_url;
   const [likes, setLikes] = useState(props.likes.length);
   const [loading, setLoading] = useState(false);
   const [loved, setLoved] = useState(likes > 0 ? true : false);
@@ -12,7 +14,7 @@ export default function LoveReact(props) {
     setLoading(true);
 
     await axios
-      .put(`http://localhost:8080/photograph/${props.id}`, {
+      .put(`${host}/photograph/${props.id}`, {
         likes: loved ? [] : [{ username: "MeRaj Rudba", id: "u-000001" }],
       })
       .then((data) => {

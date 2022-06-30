@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import lottieImage from "../images/lottie-loader.gif";
+import environment from "../../environment";
 
 export default function FeaturedReact(props) {
+  const host = environment.api_url;
   const [featured, setFeatured] = useState(props.isFeatured);
   const [loading, setLoading] = useState(false);
   const handleFeatured = async () => {
     setLoading(true);
     await axios
-      .put(`http://localhost:8080/photograph/${props.id}`, {
+      .put(`${host}/photograph/${props.id}`, {
         featured: !featured,
       })
       .then((data) => {
