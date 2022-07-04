@@ -40,7 +40,7 @@ export default function Home(props) {
 }
 
 export const getServerSideProps = async () => {
-  const host = environment.api_url;
+  const host = process.env.NEXT_PUBLIC_API_HOST;
   try {
     const res = await axios.get(`${host}/get-all`);
 

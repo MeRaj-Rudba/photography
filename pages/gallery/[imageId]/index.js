@@ -35,7 +35,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const host = environment.api_url;
+  const host = process.env.NEXT_PUBLIC_API_HOST;
   const { data } = await axios.get(`${host}/get-all`);
   const photographs = data;
   const paths = photographs.map((photo) => ({

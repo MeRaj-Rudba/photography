@@ -7,8 +7,8 @@ import ErrorModal from "./Modals/ErrorModal";
 import axios from "axios";
 import environment from "../environment";
 export default function Form() {
-  const host = environment.api_url;
-  const cloudinary_url = environment.cloudinary_url;
+  const host = process.env.NEXT_PUBLIC_API_HOST;
+  const cloudinary_url = process.env.NEXT_PUBLIC_CLOUDINARY;
   const [showModal, setShowModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorModal, setErrorModal] = useState(false);

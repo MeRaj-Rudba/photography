@@ -5,7 +5,7 @@ import Image from "next/image";
 import environment from "../../environment";
 
 export default function LoveReact(props) {
-  const host = environment.api_url;
+  const host = process.env.NEXT_PUBLIC_API_HOST;
   const [likes, setLikes] = useState(props.likes.length);
   const [loading, setLoading] = useState(false);
   const [loved, setLoved] = useState(likes > 0 ? true : false);

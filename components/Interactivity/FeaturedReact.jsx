@@ -4,7 +4,7 @@ import lottieImage from "../images/lottie-loader.gif";
 import environment from "../../environment";
 
 export default function FeaturedReact(props) {
-  const host = environment.api_url;
+  const host = process.env.NEXT_PUBLIC_API_HOST;
   const [featured, setFeatured] = useState(props.isFeatured);
   const [loading, setLoading] = useState(false);
   const handleFeatured = async () => {
