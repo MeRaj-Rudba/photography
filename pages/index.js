@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 import axios from "axios";
 import Hero from "../components/Hero/Hero";
@@ -39,6 +40,13 @@ export default function Home(props) {
         </div>
 
         <Showcase photographs={props.photographs} />
+        <div className="text-center my-10">
+          <Link href="/gallery">
+            <a className=" text-transparent font-bold bg-clip-text bg-gradient-to-r from-pink-700 to-orange-400">
+              See All
+            </a>
+          </Link>
+        </div>
       </Layout>
     </div>
   );
