@@ -10,6 +10,7 @@ import Layout from "../sections/Layout";
 import styles from "../styles/Home.module.css";
 import lottieImage from "../components/images/lottie-2.gif";
 import Showcase from "../components/Showcase/Showcase";
+import SignUpForm from "../components/user/auth/SignUpForm";
 
 export default function Home(props) {
   return (
@@ -20,33 +21,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <Hero />
-        <LandingScreen />
-        {/* <AnimationDemo /> */}
-        {/* <ScrollLinked>🍊</ScrollLinked> */}
-
-        <div className="h-64 w-64 mx-auto -rotate-6">
-          <Image
-            alt="Point of View."
-            src={lottieImage}
-            width={500}
-            height={500}
-            layout="responsive"
-            objectFit="contain"
-          />
-        </div>
-        <div className="text-center my-5 text-2xl font-bold mx-auto ">
-          <p>Featured</p>
-        </div>
-
-        <Showcase photographs={props.photographs} />
-        <div className="text-center my-10">
-          <Link href="/gallery">
-            <a className=" text-transparent font-bold bg-clip-text bg-gradient-to-r from-pink-700 to-orange-400">
-              See All
-            </a>
-          </Link>
-        </div>
+        <SignUpForm />
       </Layout>
     </div>
   );
@@ -72,3 +47,31 @@ export const getServerSideProps = async () => {
     },
   };
 };
+
+// // <Hero />
+// // <LandingScreen />
+// // {/* <AnimationDemo /> */}
+// // {/* <ScrollLinked>🍊</ScrollLinked> */}
+
+// // <div className="h-64 w-64 mx-auto -rotate-6">
+// //   <Image
+// //     alt="Point of View."
+// //     src={lottieImage}
+// //     width={500}
+// //     height={500}
+// //     layout="responsive"
+// //     objectFit="contain"
+// //   />
+// // </div>
+// // <div className="text-center my-5 text-2xl font-bold mx-auto ">
+// //   <p>Featured</p>
+// // </div>
+
+// // <Showcase photographs={props.photographs} />
+// // <div className="text-center my-10">
+// //   <Link href="/gallery">
+// //     <a className=" text-transparent font-bold bg-clip-text bg-gradient-to-r from-pink-700 to-orange-400">
+// //       See All
+// //     </a>
+// //   </Link>
+// // </div>

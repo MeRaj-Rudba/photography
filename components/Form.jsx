@@ -71,6 +71,7 @@ export default function Form() {
         ...prevState,
         title: "Title can not be empty.",
       }));
+      setLoading(false);
     }
     if (!image) {
       hasError = true;
@@ -78,6 +79,7 @@ export default function Form() {
         ...prevState,
         image: "You must select a photograph.",
       }));
+      setLoading(false);
     }
     if (!validator.isDate(date)) {
       hasError = true;
@@ -85,6 +87,7 @@ export default function Form() {
         ...prevState,
         date: "Date can not be empty",
       }));
+      setLoading(false);
     }
     if (validator.isEmpty(location)) {
       hasError = true;
@@ -92,6 +95,7 @@ export default function Form() {
         ...prevState,
         location: "Location can not be empty",
       }));
+      setLoading(false);
     }
     if (validator.isEmpty(device)) {
       hasError = true;
@@ -99,6 +103,7 @@ export default function Form() {
         ...prevState,
         device: "Device can not be empty",
       }));
+      setLoading(false);
     }
     if (validator.isEmpty(photographer)) {
       hasError = true;
@@ -106,6 +111,7 @@ export default function Form() {
         ...prevState,
         photographer: "Photographer can not be empty",
       }));
+      setLoading(false);
     }
     if (!validator.isLength(description, { min: 6 })) {
       hasError = true;
@@ -113,6 +119,7 @@ export default function Form() {
         ...prevState,
         description: "Description must be 6 character long.",
       }));
+      setLoading(false);
     }
 
     if (!hasError) {
