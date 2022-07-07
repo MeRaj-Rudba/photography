@@ -5,7 +5,6 @@ import SuccessModal from "./Modals/SuccessModal";
 import LoadingModal from "./Modals/LoadingModal";
 import ErrorModal from "./Modals/ErrorModal";
 import axios from "axios";
-import environment from "../environment";
 export default function Form() {
   const host = process.env.NEXT_PUBLIC_API_HOST;
   const cloudinary_url = process.env.NEXT_PUBLIC_CLOUDINARY;
