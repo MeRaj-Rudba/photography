@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useSession, getSession, signOut } from "next-auth/react";
+import AdminCard from "../../components/user/Admin";
 import ProfileCard from "../../components/user/ProfileCard";
 
 export default function Home(props) {
@@ -8,7 +9,11 @@ export default function Home(props) {
   if (session) {
     return (
       <>
-        <ProfileCard user={props.user} signOut={signOut} />
+        {props.user.role === "admin" ? (
+          <AdminCard user={props.user} signOut={signOut} />
+        ) : (
+          <ProfileCard user={props.user} signOut={signOut} />
+        )}
       </>
     );
   }

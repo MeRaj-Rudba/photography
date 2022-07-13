@@ -22,7 +22,7 @@ export default function ProfileCard(props) {
           <div className="h-2/4 sm:h-64 overflow-hidden">
             <img
               className="w-full rounded-t"
-              src="https://images.unsplash.com/photo-1653669718797-5670d0b57ca2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80"
+              src="https://images.unsplash.com/photo-1576502202167-791eca35a78d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=881&q=80"
               alt="Photo by aldi sigun on Unsplash"
             />
           </div>
@@ -52,12 +52,21 @@ export default function ProfileCard(props) {
                 {props.user.email}
               </div>
               <div className="w-full flex place-content-center mt-8 mx-auto ">
-                <button
-                  className="text-white bg-gradient-to-br from-pink-700 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6 cursor-pointer text-orange-600 hover:text-pink-700"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
                   onClick={() => props.signOut()}
                 >
-                  Sign out
-                </button>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                  />
+                </svg>
               </div>
             </div>
           </div>
