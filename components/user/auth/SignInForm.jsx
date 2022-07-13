@@ -7,7 +7,7 @@ import ErrorModal from "../../Modals/ErrorModal";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-export default function SignInForm() {
+export default function SignInForm(props) {
   const host = process.env.NEXT_PUBLIC_API_HOST;
   const cloudinary_url = process.env.NEXT_PUBLIC_CLOUDINARY;
   const [showModal, setShowModal] = useState(false);
@@ -134,6 +134,16 @@ export default function SignInForm() {
           >
             Sign In
           </button>
+        </div>
+        <div className="flex items-center justify-between">
+          <p
+            onClick={() => {
+              props.setHasAccount(false);
+            }}
+            className="font-bold cursor-pointer hover:text-pink-700"
+          >
+            I Dont have an account.
+          </p>
         </div>
       </form>
     </div>

@@ -6,7 +6,7 @@ import LoadingModal from "../../Modals/LoadingModal";
 import ErrorModal from "../../Modals/ErrorModal";
 import axios from "axios";
 
-export default function SignUpForm() {
+export default function SignUpForm(props) {
   const host = process.env.NEXT_PUBLIC_API_HOST;
   const cloudinary_url = process.env.NEXT_PUBLIC_CLOUDINARY;
   const [showModal, setShowModal] = useState(false);
@@ -255,6 +255,16 @@ export default function SignUpForm() {
           >
             Sign Up
           </button>
+        </div>
+        <div className="flex items-center justify-between">
+          <p
+            onClick={() => {
+              props.setHasAccount(true);
+            }}
+            className="font-bold cursor-pointer hover:text-pink-700"
+          >
+            I have an account.
+          </p>
         </div>
       </div>
     </div>

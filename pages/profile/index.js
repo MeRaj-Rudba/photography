@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useSession, getSession, signOut } from "next-auth/react";
+import ProfileCard from "../../components/user/ProfileCard";
 
 export default function Home(props) {
   const { data: session } = useSession();
@@ -7,8 +8,7 @@ export default function Home(props) {
   if (session) {
     return (
       <>
-        <h1>Profile Found with {props.user.name}</h1>
-        <button onClick={() => signOut()}>Sign out</button>
+        <ProfileCard user={props.user} signOut={signOut} />
       </>
     );
   }
@@ -38,7 +38,7 @@ export const getServerSideProps = async (context) => {
       console.log(error);
       return {
         redirect: {
-          destination: "/sign-in",
+          destination: "/auth",
           permanent: false,
         },
       };
@@ -46,7 +46,7 @@ export const getServerSideProps = async (context) => {
   } else {
     return {
       redirect: {
-        destination: "/sign-in",
+        destination: "/auth",
         permanent: false,
       },
     };
