@@ -54,7 +54,7 @@ export default function AdminCard(props) {
               </div>
 
               <div className="w-full flex place-content-center mt-8 mx-auto  ">
-                <div className="rounded-full bg-zinc-400 dark:bg-zinc-900 p-2 hover:text-pink-700">
+                <div className="rounded-full bg-zinc-300 dark:bg-zinc-900 p-2 hover:text-pink-700">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6 cursor-pointer  hover:text-pink-700"
@@ -74,8 +74,8 @@ export default function AdminCard(props) {
               </div>
               <div className="border-b border-pink-700 my-10"></div>
 
-              <div className="grid grid-cols-4 justify-start gap-5 items-center mt-10">
-                <div className="rounded-full w-max place-self-center bg-zinc-400 dark:bg-zinc-900 p-2 hover:text-pink-700">
+              <div className="grid grid-cols-4 justify-start gap-5 items-center mb-10">
+                <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-300 dark:bg-zinc-900 p-2 hover:text-pink-700">
                   <Link href="/create-photograph">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -91,8 +91,8 @@ export default function AdminCard(props) {
                     </svg>
                   </Link>
                 </div>
-                <div className="rounded-full w-max place-self-center bg-zinc-400 dark:bg-zinc-900 p-2 hover:text-pink-700">
-                  <Link href="/create-photograph">
+                <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-300 dark:bg-zinc-900 p-2 hover:text-pink-700">
+                  <Link href="/create-album">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -109,8 +109,8 @@ export default function AdminCard(props) {
                     </svg>
                   </Link>
                 </div>
-                <div className="rounded-full w-max place-self-center bg-zinc-400 dark:bg-zinc-900 p-2 hover:text-pink-700">
-                  <Link href="/create-photograph">
+                <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-300 dark:bg-zinc-900 p-2 hover:text-pink-700">
+                  <Link href="/stats">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -122,13 +122,13 @@ export default function AdminCard(props) {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                        d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
                       />
                     </svg>
                   </Link>
                 </div>
-                <div className="rounded-full w-max place-self-center bg-zinc-400 dark:bg-zinc-900 p-2 hover:text-pink-700">
-                  <Link href="/create-photograph">
+                <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-300 dark:bg-zinc-900 p-2 hover:text-pink-700">
+                  <Link href="/notification">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -145,8 +145,8 @@ export default function AdminCard(props) {
                     </svg>
                   </Link>
                 </div>
-                <div className="rounded-full w-max place-self-center bg-zinc-400 dark:bg-zinc-900 p-2 hover:text-pink-700">
-                  <Link href="/create-photograph">
+                <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-300 dark:bg-zinc-900 p-2 hover:text-pink-700">
+                  <Link href="/gallery">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -163,8 +163,8 @@ export default function AdminCard(props) {
                     </svg>
                   </Link>
                 </div>
-                <div className="rounded-full w-max place-self-center bg-zinc-400 dark:bg-zinc-900 p-2 hover:text-pink-700">
-                  <Link href="/create-photograph">
+                <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-300 dark:bg-zinc-900 p-2 hover:text-pink-700">
+                  <Link href="/albums">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -181,8 +181,8 @@ export default function AdminCard(props) {
                     </svg>
                   </Link>
                 </div>
-                <div className="rounded-full w-max place-self-center bg-zinc-400 dark:bg-zinc-900 p-2 hover:text-pink-700">
-                  <Link href="/create-photograph">
+                <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-300 dark:bg-zinc-900 p-2 hover:text-pink-700">
+                  <Link href="/messages">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -199,8 +199,8 @@ export default function AdminCard(props) {
                     </svg>
                   </Link>
                 </div>
-                <div className="rounded-full w-max place-self-center bg-zinc-400 dark:bg-zinc-900 p-2 hover:text-pink-700">
-                  <Link href="/create-photograph">
+                <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-300 dark:bg-zinc-900 p-2 hover:text-pink-700">
+                  <Link href="/settings">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"

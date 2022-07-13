@@ -44,42 +44,48 @@ const Header = () => {
         <Logo />
         <div className="flex justify-end gap-5 items-center">
           {status === "authenticated" ? (
-            <Link href="/profile">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 cursor-pointer text-pink-700"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </Link>
+            <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-200 dark:bg-zinc-800 p-2 hover:text-pink-700">
+              <Link href="/profile">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  E
+                  className="h-5 w-5 cursor-pointer "
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </Link>
+            </div>
           ) : (
-            <Link href="/auth">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 cursor-pointer text-pink-700"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                />
-              </svg>
-            </Link>
+            <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-200 dark:bg-zinc-800 p-2 hover:text-pink-700">
+              <Link href="/auth">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 cursor-pointer text-pink-700"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                  />
+                </svg>
+              </Link>
+            </div>
           )}
-
-          {renderThemeChanger()}
+          <div className="cursor-pointer rounded-full w-max place-self-center bg-zinc-200 dark:bg-zinc-800 p-2 ">
+            {renderThemeChanger()}
+          </div>
         </div>
       </div>
     </header>
